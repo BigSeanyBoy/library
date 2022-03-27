@@ -38,3 +38,22 @@ for (let book of myLibrary) {
 
   bookCards.appendChild(bookCard);
 }
+
+const newBookButton = document.querySelector('.new-book')
+newBookButton.addEventListener('click', () => {
+  const form = document.createElement('form');
+  form.classList.add('book-form');
+
+  const titleLabel = document.createElement('label');
+  titleLabel.setAttribute('for', 'title');
+  titleLabel.textContent = 'Title: ';
+  form.appendChild(titleLabel);
+
+  const titleInput = document.createElement('input');
+  titleInput.setAttribute('id', 'title');
+  titleInput.setAttribute('name', 'title');
+  titleInput.setAttribute('type', 'text')
+  form.appendChild(titleInput);
+
+  document.body.appendChild(form);
+});
