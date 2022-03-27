@@ -1,0 +1,26 @@
+body {
+  background-color: white;
+}
+
+.book-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+}
+
+.card {
+  background-color: whitesmoke;
+  height: 150px;
+  width: 250px;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info {
+  color: rgba(0, 0, 0, 0.6);
+}
