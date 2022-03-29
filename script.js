@@ -7,6 +7,11 @@ function Book(title, author, pages, readStatus) {
   this.readStatus = readStatus;
 }
 
+Book.prototype.toggleReadStatus = function() {
+  this.readStatus = this.readStatus == 'not read' ? 'read' : 'not read';
+  displayBooks();
+}
+
 function displayBooks() {
   const bookCards = document.querySelector('.book-cards');
   while (bookCards.firstChild) {
@@ -32,6 +37,15 @@ function displayBooks() {
     readStatus.classList.add('status');
     readStatus.textContent = book.readStatus.toUpperCase();
     bookCard.appendChild(readStatus);
+
+    const statusButton = document.createElement('button');
+    statusButton.classList.add('status-button');
+    statusButton.textContent = 'Toggle Status';
+    statusButton.addEventListener('click', () => {
+      book.toggleReadStatus();
+      displayBooks();
+    });
+    bookCard.appendChild(statusButton);
 
     const remove = document.createElement('button');
     remove.classList.add('remove');

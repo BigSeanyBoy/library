@@ -31,10 +31,17 @@ body {
 
 .status {
   grid-column: 1;
+  align-self: center;
+}
+
+.status-button {
+  grid-row: 3;
+  grid-column: 2;
+  margin: 5px;
 }
 
 .remove {
-  grid-column: 2;
+  grid-column: 1 / -1;
 }
 
 .new-book {
