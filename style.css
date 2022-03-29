@@ -4,7 +4,8 @@ body {
 
 .book-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 270px);
+  gap: 10px;
 }
 
 .card {
@@ -13,14 +14,42 @@ body {
   width: 250px;
   padding: 10px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
+  grid-column: 1 / -1;
 }
 
 .info {
   color: rgba(0, 0, 0, 0.6);
+  grid-column: 1 / -1;
+}
+
+.status {
+  grid-column: 1;
+}
+
+.remove {
+  grid-column: 2;
+}
+
+.new-book {
+  margin: 10px;
+}
+
+.book-form {
+  margin-left: 10px;
+  max-width: 200px;
+  display: grid;
+  grid-template-columns: 8ch 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+input {
+  margin: 0;
 }
