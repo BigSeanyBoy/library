@@ -1,16 +1,30 @@
 const myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.readStatus = readStatus;
+class Book {
+  constructor(title, author, pages, readStatus) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.readStatus = readStatus;
+  }
+
+  toggleReadStatus() {
+    this.readStatus = this.readStatus == 'not read' ? 'read' : 'not read';
+    displayBooks();
+  }
 }
 
-Book.prototype.toggleReadStatus = function() {
-  this.readStatus = this.readStatus == 'not read' ? 'read' : 'not read';
-  displayBooks();
-}
+// function Book(title, author, pages, readStatus) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.readStatus = readStatus;
+// }
+
+// Book.prototype.toggleReadStatus = function() {
+//   this.readStatus = this.readStatus == 'not read' ? 'read' : 'not read';
+//   displayBooks();
+// }
 
 function displayBooks() {
   const bookCards = document.querySelector('.book-cards');
